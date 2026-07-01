@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [time, setTime] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const updateTime = () => {
@@ -37,7 +38,9 @@ export default function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 w-full h-[8rem] px-[4.8rem] mx-auto z-[1000] flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] max-lg:px-[3.2rem] ${
+      className={`fixed top-0 left-0 w-full h-[8rem] px-[4.8rem] mx-auto flex items-center justify-between transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] max-lg:px-[3.2rem] ${
+        isOpen ? "z-[40]" : "z-[1000]"
+      } ${
         isScrolled 
           ? "bg-bg-main/90 backdrop-blur-md border-b border-border-color/10 shadow-sm opacity-100 translate-y-0" 
           : "opacity-0 -translate-y-full pointer-events-none"
@@ -64,22 +67,35 @@ export default function Header() {
 
       {/* Mobile navigation via shadcn Sheet drawer */}
       <div className="md:hidden">
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-            <button aria-label="Open navigation menu" className="border-none bg-transparent cursor-pointer p-2 text-text-main flex items-center justify-center">
+            <button 
+              aria-label="Open navigation menu" 
+              className={`border-none bg-transparent cursor-pointer p-2 text-text-main flex items-center justify-center transition-opacity duration-200 ${
+                isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+              }`}
+            >
               <Menu className="h-[2.6rem] w-[2.6rem]" />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] bg-bg-main/95 border-l border-border-color p-8 flex flex-col justify-center">
+          <SheetContent side="right" className="w-[300px] bg-bg-main/95 border-l border-border-color p-8 flex flex-col justify-center" showCloseButton={false}>
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            {/* Custom close button inside portal content to bypass Radix UI click trap */}
+            <button 
+              onClick={() => setIsOpen(false)}
+              aria-label="Close navigation menu" 
+              className="absolute top-[2.2rem] right-[3.2rem] border-none bg-transparent cursor-pointer p-2 text-text-main hover:text-stone-300 transition-colors duration-200 flex items-center justify-center"
+            >
+              <X className="h-[2.6rem] w-[2.6rem]" />
+            </button>
             <div className="flex flex-col gap-8 items-center">
               <span className="text-[1.2rem] tracking-[0.2em] uppercase text-stone-500 font-bold mb-4">
                 New Delhi {time}
               </span>
-              <a className="no-underline text-[1.6rem] font-bold tracking-[0.15em] uppercase text-text-muted hover:text-text-main transition-colors" href="#how">Work</a>
-              <a className="no-underline text-[1.6rem] font-bold tracking-[0.15em] uppercase text-text-muted hover:text-text-main transition-colors" href="#meals">Method</a>
-              <a className="no-underline text-[1.6rem] font-bold tracking-[0.15em] uppercase text-text-muted hover:text-text-main transition-colors" href="#pricing">Pricing</a>
-              <a className="no-underline text-[1.6rem] font-bold tracking-[0.15em] uppercase text-primary hover:text-primary-hover transition-colors" href="#cta">Contact</a>
+              <a onClick={() => setIsOpen(false)} className="no-underline text-[1.6rem] font-bold tracking-[0.15em] uppercase text-text-muted hover:text-text-main transition-colors" href="#how">Work</a>
+              <a onClick={() => setIsOpen(false)} className="no-underline text-[1.6rem] font-bold tracking-[0.15em] uppercase text-text-muted hover:text-text-main transition-colors" href="#meals">Method</a>
+              <a onClick={() => setIsOpen(false)} className="no-underline text-[1.6rem] font-bold tracking-[0.15em] uppercase text-text-muted hover:text-text-main transition-colors" href="#pricing">Pricing</a>
+              <a onClick={() => setIsOpen(false)} className="no-underline text-[1.6rem] font-bold tracking-[0.15em] uppercase text-primary hover:text-primary-hover transition-colors" href="#cta">Contact</a>
             </div>
           </SheetContent>
         </Sheet>

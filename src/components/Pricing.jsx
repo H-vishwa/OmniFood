@@ -181,7 +181,7 @@ export default function Pricing() {
                 </div>
 
                 {/* ── 2-col breakdown: Included | Perks ── */}
-                <div className="grid grid-cols-2 gap-x-[4rem] gap-y-[3.2rem] mb-[4.8rem] border-t border-stone-200 pt-[4rem] max-xs:grid-cols-1">
+                <div className="grid grid-cols-2 gap-x-[4rem] gap-y-[3.2rem] mb-[4.8rem] border-t border-stone-200 pt-[4rem] max-sm:grid-cols-1">
                   {/* Included */}
                   <div>
                     <p className="text-[1.2rem] font-bold tracking-[0.18em] uppercase text-stone-900 mb-[1.6rem]">
@@ -212,7 +212,7 @@ export default function Pricing() {
                 </div>
 
                 {/* ── Bottom row: Timeline | Investment ── */}
-                <div className="grid grid-cols-2 gap-x-[4rem] border-t border-stone-200 pt-[3.2rem] max-xs:grid-cols-1">
+                <div className="grid grid-cols-2 gap-x-[4rem] border-t border-stone-200 pt-[3.2rem] max-sm:grid-cols-1">
                   <div>
                     <p className="text-[1.2rem] font-bold tracking-[0.18em] uppercase text-stone-900 mb-[1.2rem]">
                       Timeline
@@ -242,7 +242,7 @@ export default function Pricing() {
         </div>
 
         {/* ── BOTTOM FEATURE STRIP ── */}
-        <div className="border-t border-stone-200 pt-[6.4rem] grid grid-cols-4 gap-[3.2rem] max-lg:grid-cols-2 max-xs:grid-cols-1">
+        <div className="border-t border-stone-200 pt-[6.4rem] grid grid-cols-4 gap-[3.2rem] max-lg:grid-cols-2 max-sm:grid-cols-1">
           {features.map((f) => (
             <div key={f.label} className="flex flex-col gap-3 pricing-feature-col opacity-0">
               <Check className="w-[1.8rem] h-[1.8rem] text-primary shrink-0" />

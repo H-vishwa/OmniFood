@@ -174,7 +174,7 @@ export default function TierPitch() {
         {/* Content Row: Canvas and Narrative side-by-side */}
         <div className="grid grid-cols-2 max-md:grid-cols-1 gap-[9.6rem] items-center">
           {/* Left Side: Interactive Constellation Canvas */}
-          <div className="w-[60rem] h-[60rem] max-md:w-[32rem] max-md:h-[32rem] max-md:mx-auto relative">
+          <div className="w-full h-full max-md:w-lg max-md:h-128 max-md:mx-auto relative">
             <canvas
               ref={canvasRef}
               className="w-full h-full block"

@@ -173,7 +173,7 @@ export default function HowItWorks() {
           >
             <div className={`grid max-md:grid-cols-1 ${i === 1 ? "grid-cols-[1.1fr_1fr]" : "grid-cols-[1fr_1.1fr]"}`}>
               {/* text panel — order swapped for step 2 */}
-              <div className={`flex flex-col justify-between p-[4.8rem] max-md:p-[3.2rem] ${i === 1 ? "order-last" : ""}`}>
+              <div className={`flex flex-col justify-between p-[4.8rem] max-md:p-[3.2rem] ${i === 1 ? "md:order-last" : ""}`}>
                 <div>
                   <span className="inline-block text-[1.2rem] font-semibold tracking-[0.25em] uppercase text-primary mb-6">
                     {step.number} / {step.label}
@@ -192,7 +192,7 @@ export default function HowItWorks() {
               </div>
 
               {/* image panel — order swapped for step 2 */}
-              <div className={`relative flex items-end justify-center bg-[radial-gradient(ellipse_at_bottom,rgba(224,62,26,0.06)_0%,transparent_70%)] min-h-[38rem] max-md:min-h-[28rem] overflow-hidden ${i === 1 ? "order-first" : ""}`}>
+              <div className={`relative flex items-end justify-center bg-[radial-gradient(ellipse_at_bottom,rgba(224,62,26,0.06)_0%,transparent_70%)] min-h-[38rem] max-md:min-h-[28rem] overflow-hidden ${i === 1 ? "md:order-first" : ""}`}>
                 {/* Subtle dot-grid overlay */}
                 <div
                   className="absolute inset-0 opacity-[0.03] pointer-events-none"

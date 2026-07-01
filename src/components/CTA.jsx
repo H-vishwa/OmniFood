@@ -82,7 +82,7 @@ export default function CTA() {
             <div className="p-[4rem] max-sm:p-[2.8rem]">
 
             {/* LOGIN */}
-            <TabsContent value="login">
+            <TabsContent value="login" className="mt-8">
               <CardHeader className="text-center p-0 mb-[2.8rem]">
                 <CardTitle className="font-serif text-[2.6rem] font-light text-white m-0 leading-tight">Welcome Back</CardTitle>
                 <CardDescription className="text-[1.4rem] text-white/30 mt-[0.6rem] font-sans">Log in with your social account or email</CardDescription>
@@ -128,7 +128,7 @@ export default function CTA() {
             </TabsContent>
 
             {/* SIGN UP */}
-            <TabsContent value="signup">
+            <TabsContent value="signup" className="mt-8">
               <CardHeader className="text-center p-0 mb-[2.8rem]">
                 <CardTitle className="font-serif text-[2.6rem] font-light text-white m-0 leading-tight">Create Account</CardTitle>
                 <CardDescription className="text-[1.4rem] text-white/30 mt-[0.6rem] font-sans">Sign up for a free subscription account</CardDescription>

@@ -105,12 +105,11 @@ export default function FeaturedIn() {
 
         {/* Bottom Partner Logos in Inverted High Contrast */}
         <div className="w-full mt-12 pt-12 border-t border-stone-200/60">
-          <div className="flex justify-around items-center h-[2.8rem] brightness-0 opacity-80 max-lg:h-[2.4rem] max-md:h-[2rem] max-xs:h-[1.6rem]">
-            <img src="/image/logos/techcrunch.png" alt="Tech Crunch" className="h-full object-contain" />
-            <img src="/image/logos/business-insider.png" alt="Business Insider" className="h-full object-contain" />
-            <img src="/image/logos/the-new-york-times.png" alt="The New York times" className="h-full object-contain" />
-            <img src="/image/logos/forbes.png" alt="Forebes" className="h-full object-contain" />
-            <img src="/image/logos/usa-today.png" alt="USA Today" className="h-full object-contain" />
+          <div className="grid grid-cols-4 max-md:grid-cols-3 max-xs:grid-cols-2 gap-8 items-center justify-items-center opacity-80 brightness-0">
+            <img src="/image/logos/techcrunch.png" alt="Tech Crunch" className="h-[2.8rem] mb-4 max-lg:h-[2.4rem] max-md:h-8 max-xs:h-[1.8rem] object-contain" />
+            <img src="/image/logos/business-insider.png" alt="Business Insider" className="h-[2.8rem] mb-4 max-lg:h-[2.4rem] max-md:h-8 max-xs:h-[1.8rem] object-contain" />
+            <img src="/image/logos/the-new-york-times.png" alt="The New York times" className="h-[2.8rem] max-lg:h-[2.4rem] max-md:h-8 max-xs:h-[1.8rem] object-contain" />
+            <img src="/image/logos/forbes.png" alt="Forebes" className="h-[2.8rem] max-lg:h-[2.4rem] max-md:h-8 max-xs:h-[1.8rem] object-contain" />
           </div>
         </div>
       </div>
