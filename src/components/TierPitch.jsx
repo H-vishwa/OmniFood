@@ -109,8 +109,8 @@ export default function TierPitch() {
         height / 2,
         240
       );
-      glow.addColorStop(0, "rgba(255, 255, 255, 1)");
-      glow.addColorStop(0.5, "rgba(255, 255, 255, 1)");
+      glow.addColorStop(0, "rgba(255, 255, 255, 0.22)");
+      glow.addColorStop(0.5, "rgba(255, 255, 255, 0.06)");
       glow.addColorStop(1, "rgba(0, 0, 0, 0)");
       ctx.fillStyle = glow;
       ctx.fillRect(0, 0, width, height);
